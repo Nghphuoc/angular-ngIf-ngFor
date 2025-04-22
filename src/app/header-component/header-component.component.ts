@@ -9,7 +9,6 @@ export class HeaderComponentComponent {
 
   showMenu = false;
   @Input() visible = false;
-  @Input() login = false;
   @Output() close = new EventEmitter<void>();
 
   onClose() {
@@ -21,6 +20,6 @@ export class HeaderComponentComponent {
 
   offShow(){
     this.visible = !this.visible;
-    this.close.emit();
   }
+
 }

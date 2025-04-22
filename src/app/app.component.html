@@ -1,5 +1,5 @@
 <app-header-component [visible]="showLoginModal"
-  (click)="openLogin()" (close)="closeLogin()" >
+  (click)="openLogin()" >
 </app-header-component>
 
 <h1 class="text-3xl font-bold text-indigo-400 items-center justify-center text-center hover:text-indigo-500">
@@ -8,5 +8,7 @@
 
 <app-user-component [user]="data" [checkOn]="checkOn">
 </app-user-component>
+
+<app-student-component></app-student-component>
 
 <router-outlet/>
