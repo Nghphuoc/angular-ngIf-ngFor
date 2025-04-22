@@ -1,0 +1,47 @@
+<div class="p-4">
+  <h2 class="text-2xl font-bold mb-4">Danh sách người dùng</h2>
+  <button
+    class="px-4 py-2 rounded-xl mb-2"
+    [style]="{ 'background-color': checkOn ? 'green' : 'red' }"
+    (click)="onClick()"
+  >
+    Click
+  </button>
+  <div class="overflow-x-auto">
+    <div *ngIf="checkOn" class="mb-4">
+      <table class="min-w-full table-auto border border-gray-200">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="px-4 py-2 border">ID</th>
+            <th class="px-4 py-2 border">Họ tên</th>
+            <th class="px-4 py-2 border">Username</th>
+            <th class="px-4 py-2 border">Email</th>
+            <th class="px-4 py-2 border">Phone</th>
+            <th class="px-4 py-2 border">Địa chỉ</th>
+            <th class="px-4 py-2 border">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of user" class="hover:bg-gray-50">
+            <td class="px-4 py-2 border">{{ user.id }}</td>
+            <td class="px-4 py-2 border">
+              <div *ngIf="user.name.length > 10; else noShow">yes</div>
+                <ng-template #noShow> no</ng-template>
+                
+            </td>
+            <td class="px-4 py-2 border">{{ user.username }}</td>
+            <td class="px-4 py-2 border">{{ user.email }}</td>
+            <td class="px-4 py-2 border">{{ user.phone }}</td>
+            <td class="px-4 py-2 border">
+              {{ user.address.street }}, {{ user.address.district }},
+              {{ user.address.city }}
+            </td>
+            <td class="px-4 py-2 border items-center text-center">
+                <button class="rounded-lg text-white font-bold text-center px-5 py-3 bg-green-400">Check</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
