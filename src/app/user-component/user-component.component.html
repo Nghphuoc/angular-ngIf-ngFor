@@ -23,18 +23,18 @@
         </thead>
         <tbody>
           <tr *ngFor="let user of user" class="hover:bg-gray-50">
-            <td class="px-4 py-2 border">{{ user.id }}</td>
+            <td class="px-4 py-2 border">{{ user?.id }}</td>
             <td class="px-4 py-2 border">
-              <div *ngIf="user.name.length > 10; else noShow">yes</div>
+              <div *ngIf="user?.name.length > 10; else noShow">yes</div>
                 <ng-template #noShow> no</ng-template>
                 
             </td>
-            <td class="px-4 py-2 border">{{ user.username }}</td>
-            <td class="px-4 py-2 border">{{ user.email }}</td>
-            <td class="px-4 py-2 border">{{ user.phone }}</td>
+            <td class="px-4 py-2 border">{{ user?.username }}</td>
+            <td class="px-4 py-2 border">{{ user?.email }}</td>
+            <td class="px-4 py-2 border">{{ user?.phone }}</td>
             <td class="px-4 py-2 border">
-              {{ user.address.street }}, {{ user.address.district }},
-              {{ user.address.city }}
+              {{ user?.address.street }}, {{ user?.address.district }},
+              {{ user?.address.city }}
             </td>
             <td class="px-4 py-2 border items-center text-center">
                 <button class="rounded-lg text-white font-bold text-center px-5 py-3 bg-green-400">Check</button>
